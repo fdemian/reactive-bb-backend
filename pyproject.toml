@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "reactive-bb-backend"
+version = "0.1.0"
+description = ""
+authors = ["fdemian <fdemian@gmail.com>"]
+readme = "README.md"
+packages = [{include = "reactive_bb_backend"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
