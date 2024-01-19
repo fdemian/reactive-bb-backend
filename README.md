@@ -19,6 +19,8 @@ The following packages must be installed on the target machine for the applicati
 
 `python3 install.py`
 
+The script will ask you for information, generate the config files, create the database and associated directories.
+
 2) Once you have run the installation script, you will have created an empty application. Create some users by running the following commands.
 
 `poetry run adduser`
