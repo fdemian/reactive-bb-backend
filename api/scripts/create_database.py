@@ -1,5 +1,5 @@
 from os import path, getcwd, fchdir, open, O_RDONLY
-from api.read_config import get_database_url_options
+from api.database.utils import get_database_url_options
 from api.utils.utils import parse_config_file
 from sqlalchemy_utils import database_exists, create_database
 from alembic import command
@@ -29,8 +29,7 @@ def create_db_and_upgrade():
     options = parse_config_file(config_file_path)
     database_url = get_database_url_options(options)
     create_database_if_not_exists(database_url)
-    run_migrations(database_url)
-
+    run_migrations(str(database_url))
 
 def main():
     create_db_and_upgrade()

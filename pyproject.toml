@@ -8,8 +8,44 @@ packages = [{include = "reactive_bb_backend"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+ariadne = "^0.21"
+alembic = "^1.13.1"
+psycopg2-binary = "^2.9.9"
+pyjwt = "^2.8.0"
+starlette = "^0.35.1"
+python-multipart = "^0.0.6"
+gunicorn = "^21.2.0"
+rauth = "^0.7.3"
+aiohttp = "^3.9.1"
+aiofiles = "^23.2.1"
+sqlalchemy-utils = "^0.41.1"
+websockets = "^12.0"
+graphql-core = "^3.2.3"
+anyio = "^4.2.0"
+uvicorn = "^0.26.0"
+pytest = "^7.4.4"
+pytest-asyncio = "^0.23.3"
+pytest-cov = "^4.1.0"
+coverage = "^7.4.0"
+broadcaster = "^0.2.0"
+mypy = "^1.8.0"
+sqlalchemy = "^2.0.25"
+asyncpg = "^0.29.0"
+ruff = "^0.1.13"
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+test = "pytest"
+test_cov = "poetry run pytest --cov=api"
+init = "api.scripts.initial_config:main"
+adduser = "api.scripts.add_user:main"
+createdb = "api.scripts.create_database:main"
+destroydb = "api.scripts.destroy_database:main"
+resetdb = "api.scripts.reset_database:main"
+testdata = "api.scripts.insert_test_data:main"
+db_upgrade = "alembic upgrade head"
+db_downgrade = "alembic downgrade base"
