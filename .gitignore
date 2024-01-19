@@ -3,4 +3,4 @@ __pycache__/
 .DS_Store
 *.log
 static/uploads/
-config.json # Ignore the main config file.
+config.json
