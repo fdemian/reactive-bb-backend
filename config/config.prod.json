@@ -1,0 +1,111 @@
+{
+  "environment": "production",
+  "database": {
+    "user": "postgres",
+    "name": "reactivebb",
+    "port": "5432",
+    "password": "postgres",
+    "driver": "psycopg2"
+  },
+  "forum": {
+    "name": "Morpheus",
+    "description": "This is a forum",
+    "items_per_page": "10"
+  },
+ "server": {
+    "port": "8000",
+    "production": "True",
+    "sockName": "/tmp/uvicorn.sock",
+    "domain": "http://localhost:3000"
+  },
+  "oauth":{
+    "enabled": "false",
+    "redirectURI": "",
+    "services": [
+      {
+        "name": "google",
+        "scope": "email profile",
+        "clientId": "",
+        "clientSecret": "",
+        "extraParams": "&prompt=consent&access_type=offline",
+        "authorizeURL": "https://accounts.google.com/o/oauth2/auth",
+        "accessTokenUrl": "https://accounts.google.com/o/oauth2/token",
+        "baseURL": "https://accounts.google.com/o/oauth2/auth",
+        "consentURL": "https://accounts.google.com/o/oauth2/v2/auth",
+        "enabled": "False"
+      },
+      {
+        "name": "facebook",
+        "scope": "",
+        "clientId": "",
+        "clientSecret": "",
+        "extraParams": "",
+        "authorizeURL": "https://graph.facebook.com/oauth/authorize",
+        "accessTokenUrl": "https://graph.facebook.com/oauth/access_token",
+        "baseURL": "https://graph.facebook.com/",
+        "consentURL": "",
+        "enabled": "False"
+      },
+      {
+        "name": "github",
+        "scope": "user:email",
+        "clientId": "",
+        "clientSecret": "",
+        "extraParams": "",
+        "authorizeURL": "https://github.com/login/oauth/authorize",
+        "accessTokenUrl": "https://github.com/login/oauth/access_token",
+        "baseURL": "https://github.com/login",
+        "consentURL": "https://github.com/login/oauth/authorize",
+        "enabled": "False"
+      },
+      {
+        "name": "twitter",
+        "scope": "",
+        "clientId": "",
+        "clientSecret": "",
+        "extraParams": "",
+        "authorizeURL": "",
+        "accessTokenUrl": "",
+        "baseURL": "",
+        "consentURL": "",
+        "enabled": "False"
+      }
+    ]
+  },
+  "security": {
+    "serveHttps": "false",
+    "cookie_secret": "supercalifragilisticexpialidous",
+    "ssl_cert": "",
+    "ssl_key": "",
+    "validateMail": "False"
+  },
+  "account": {
+    "maxLoginTries": "4",
+    "loginDelayTimeStep": "15",
+    "lockoutTimeWindow": "30"
+  },
+  "logFile": "",
+  "mail": {
+    "mailAddress": "no-reply@morpheus.com",
+    "local": "True",
+    "port": "587",
+    "url": "localhost",
+    "certRoot": "",
+    "auth": {
+      "username": "",
+      "password": ""
+    }
+  },
+  "jwt": {
+    "auth": {
+      "secret": "secret",
+      "algorithm": "HS256",
+      "expiration": "500"
+    },
+    "refresh": {
+      "secret": "secret2",
+      "algorithm": "HS256",
+      "expiration": "3600"
+    }
+  }
+}
