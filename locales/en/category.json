@@ -1,0 +1,11 @@
+{
+  "category": {
+     "topicsInCategory": "Topics in category",
+     "author": "Author",
+     "created": "Created",
+     "replies": "Replies",
+     "views": "Views",
+     "noTopicsCategory": "Looks like there are no topics on this category.",
+     "categoryTopics": "Topics"
+   }
+}

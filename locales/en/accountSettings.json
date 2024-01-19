@@ -1,0 +1,58 @@
+{
+  "settings": {
+        "options": {
+            "profile": "Profile",
+            "securityView": "Security"
+        },
+        "bindings": {
+            "bindAccount": "Bind your {service} account",
+            "bind": "Bind"
+        },
+        "notify": {
+          "dontNotify": "Don't notify",
+          "email": "Email",
+          "popup": "Popup",
+          "privateMessage": "Private message",
+          "privateMessageDesc": "Notify me when someone sends a message to my inbox.",
+          "mention": "Mention",
+          "mentionDesc": "Notify me when someone mentions me on a thread.",
+          "watchedTopic": "Watched topic",
+          "watchedTopicDesc": "Notify me when a watched topic gets new replies."
+      },
+      "security": {
+         "password": "Password",
+         "currentPass": "Current password",
+          "modify": "Modify",
+          "email": "Email",
+          "delete": "Delete",
+          "warning": "Warning",
+          "deleteMsg": "Delete my account",
+          "deleteWarning": "This will permanently delete your account",
+          "passwordModalTitle": "Change password",
+          "dialogClose": "Close",
+          "emailModalTitle": "Change email",
+          "emailChangePlaceholder": "Enter new email",
+          "updateEmailSuccess": "Successfuly updated email",
+          "emailChangeWarning": "By changing your email you will no longer recieve notifications to your older email. Please make sure you will not use this email anymore before changing it",
+          "passwordInputPlaceholder": "Enter current password.",
+          "passwordNewPlaceholder": "Enter new password",
+          "passwordConfirmPlaceholder": "Confirm new password",
+          "passwordUpdateError": "Error updating password",
+          "passwordUpdateSuccess": "Password updated successfuly",
+          "riskyPassword": "This password is very weak and easily guessable.",
+          "weakPassword": "This password is weak. It will protect you from throttled online attacks.",
+          "normalPassword": "This password is normal. It will protect you from unthrottled online attacks.",
+          "strongPassword": "This password is secure. It will protect you from an offline slow-hash scenario.",
+          "veryStrongPassword": "This password is very secure. It will strongly protect you from an offline slow-hash scenario."
+      },
+      "profile": {
+        "avatarChange": "Change avatar",
+        "clientUpdating": "Updating information",
+        "clientUpdate": "Update Information",
+        "status": "Status",
+        "aboutMe": "About me",
+        "profile": "Profile",
+        "profileSettings": "Profile settings"
+      }
+  }
+}

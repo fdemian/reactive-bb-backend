@@ -1,0 +1,15 @@
+{
+  "logout": {
+    "title": "You have been logged out.",
+    "subTitle": "Looks like your session time has expired.",
+    "logIn": "Log in",
+    "mainPageLink": "Go to the main page",
+    "timedOutSession": "You session has timed out.",
+    "sessionNotRenewed": "This is most likely a result of your session not being renewed.",
+    "sessionNotRenewedPage": "Perhaps you close the page and came back after the session expired.",
+    "youCan":"You can",
+    "logBackIn": "log back in",
+    "or": "or",
+    "goBack": "go back to the main page"
+  }
+}

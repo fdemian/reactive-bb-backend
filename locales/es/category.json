@@ -1,0 +1,11 @@
+{
+  "category": {
+    "topicsInCategory": "Temas en la categoría",
+     "author": "Autor",
+     "created": "Creado",
+     "replies": "Respuestas",
+     "views": "Vistas",
+     "noTopicsCategory": "Parece que no hay temas creados para esta categoría.",
+     "categoryTopics": "Temas"
+   }
+}

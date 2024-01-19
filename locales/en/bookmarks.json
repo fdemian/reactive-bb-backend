@@ -1,0 +1,9 @@
+{
+  "bookmarks": {
+     "bookmarks": "Bookmarks",
+     "goToBookmark": "Go to bookmark",
+     "removeBookmark": "Remove bookmark",
+     "noBookmarks": "There are no bookmarks",
+     "error": "Error retrieving bookmarks"
+  }
+}

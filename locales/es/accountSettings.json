@@ -1,0 +1,58 @@
+{
+  "settings": {
+      "options": {
+        "profile": "Perfil",
+        "securityView": "Seguridad"
+      },
+      "bindings": {
+        "bindAccount": "Conectar su cuenta de {service}",
+        "bind": "Conectar"
+      },
+      "notify": {
+        "dontNotify": "No notificarme",
+        "email": "Correo",
+        "popup": "Popup",
+        "privateMessage": "Mensaje privado",
+        "privateMessageDesc": "Notificarme cuando alguien envía un mensaje a mi inbox.",
+        "mention": "Mención",
+        "mentionDesc": "Notificarme cuando alguien me menciona en un tema.",
+        "watchedTopic": "Topic seguido",
+        "watchedTopicDesc": "Notificarme cuando un topic que estoy siguiendo tenga nuevas respuestas."
+      },
+      "security": {
+        "password": "Contraseña",
+        "currentPass": "Contraseña actual",
+        "modify": "Modificar",
+        "email": "Correo",
+        "delete": "Eliminar",
+        "warning": "Alerta!",
+        "deleteMsg": "Eliminar mi cuenta",
+        "deleteWarning": "Esto eliminara permanentemente su cuenta",
+        "passwordModalTitle": "Cambiar contraseña",
+        "dialogClose": "Cerrar",
+        "emailModalTitle": "Cambiar correo",
+        "emailChangePlaceholder": "Ingrese el nuevo correo",
+        "updateEmailSuccess": "Correo actualizado con éxito",
+        "emailChangeWarning": "Al cambiar su correo dejara de recibir notificaciones a su vieja casilla de correo. Por favor, asegurese de que no lo seguira usando antes de cambiarlo.",
+        "passwordInputPlaceholder": "Ingrese contraseña actual",
+        "passwordNewPlaceholder": "Ingrese nueva contraseña",
+        "passwordConfirmPlaceholder": "Confirme la nueva contraseña",
+        "passwordUpdateError": "Error al actualizar la contraseña",
+        "passwordUpdateSuccess": "Contraseña actualizada con éxito.",
+        "riskyPassword": "Esta contraseña es muy débil y fácil de adivinar.",
+        "weakPassword": "Esta contraseña es debil. Proveera protección de throttled online attacks.",
+        "normalPassword": "Esta contraseña es normal. Proveera protección de unthrottled online attacks.",
+        "strongPassword": "Esta contraseña es segura. Proveera protección moderada de un ataque de hasheo lento offline.",
+        "veryStrongPassword": "Esta contraseña es muy segura.  Proveera protección fuente de un ataque de hasheo lento offline."
+      },
+      "profile": {
+        "avatarChange": "Cambiar avatar",
+        "clientUpdating": "Actualizando información",
+        "clientUpdate": "Actualizar información",
+        "status": "Estado",
+        "aboutMe": "Acerca de mí",
+        "profile": "Perfil",
+        "profileSettings": "Ajustes de perfil"
+      }
+  }
+}

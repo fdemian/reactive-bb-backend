@@ -1,0 +1,14 @@
+{
+  "banned": {
+    "banStatusNotice": "Ha sido suspendido/a del foro.",
+    "banStatusNoticeText": "No podra postear, crear nuevos temas o cambiar sus preferencias de usuario hasta que su suspensión expire.",
+    "banStatusClick": "Haga click aquí para los detalles",
+    "banTitle": "Su usuario ha sido suspendido.",
+    "banReason": "La razón de suspensión es",
+    "banActionTitle": "¿Que puedo hacer?",
+    "unjustBanText": "Si siente que la suspensión fue injusta, puede contactar al administrador",
+    "waitBanExpires": "ó esperar a que su suspensión expire o un moderador la levante (en caso de que la misma sea permanente).",
+    "banExpires": "Su suspensión expira en",
+    "permanentlyBanned": "Suspensión permanente (jamás expira)"
+  }
+}

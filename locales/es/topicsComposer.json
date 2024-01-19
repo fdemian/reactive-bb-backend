@@ -1,0 +1,15 @@
+{
+  "topicsComposer": {
+    "createTopic": "Crear nuevo tema",
+    "titlePlaceholder": "Ingrese titulo del tema",
+    "newTag": "Nueva etiqueta",
+    "cancel": "Cancelar",
+    "editTopic": "Editar Tema",
+    "createTopic" : "Crear Tema",
+    "saveDraft": "Guardar borrador",
+    "saveAsDraft" : "Guardar como borrador",
+    "categoriesAvailable": "No hay categorías disponibles",
+    "selectCategory": "Elija una categoría",
+    "chooseTags": "Elija algunas etiquetas (opcional)"
+  }
+}

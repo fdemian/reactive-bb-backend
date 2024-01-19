@@ -1,0 +1,14 @@
+{
+  "banned": {
+    "banStatusNotice": "You have been banned from the forum.",
+    "banStatusNoticeText": "You will be unable to post, create new topics or change your user settings until your ban expires.",
+    "banStatusClick": "Click here for details",
+    "banTitle": "You have been banned.",
+    "banReason": "The stated reason for your ban is",
+    "banActionTitle": "What can I do?",
+    "unjustBanText": "If you feel you have been banned unjustly you can contact the administrator",
+    "waitBanExpires": "Or wait until your ban expires or a moderator seems fit to remove it (in case the ban is permanent).",
+    "banExpires": "Ban expires in",
+    "permanentlyBanned": "Permanent ban (never expires)"
+  }
+}

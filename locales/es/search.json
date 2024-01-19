@@ -1,0 +1,18 @@
+{
+  "search": {
+    "error": "Error",
+    "search": "Buscar",
+    "noMatch": "Parece que no hay resultados que coincidan con su búsqueda.",
+    "searchIn": "Buscar en",
+    "searchInDetail": "Donde buscar el término dado.",
+    "searchTerm": "Parámetro de búsqeda",
+    "searchTermDetail": "Palabra que se desea buscar",
+    "searchedFor": "Ha buscado",
+    "noSearch": "Aún no ha buscado nada",
+    "in": "en",
+    "topics": "temas",
+    "posts": "posts",
+    "topicTitles": "Título de temas",
+    "postSearch": "Posts"
+  }
+}

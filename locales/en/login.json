@@ -1,0 +1,16 @@
+{
+  "login": {
+     "login": "Log In",
+     "usernamePlaceholder": " Enter your username",
+     "usernameError": "Please input your username!",
+     "passwordPlaceholder": " Enter password",
+     "passwordError": "Please input your password!",
+     "forgotPass": "Forgot password?",
+     "loginServerError": "The user/password combination is incorrect.",
+     "error": "Error",
+     "oauthLogins": "Alternate logins",
+     "logInPopup": "Log in using",
+     "loadingLogIn": "Logging in",
+     "pleaseWait": "Please wait"
+  }
+}

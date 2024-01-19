@@ -1,0 +1,12 @@
+{
+  "oauth": {
+    "loggingIn": "Ingresando",
+    "waitWarning": "Espere por favor",
+    "loggingInWith": "Ingresando con",
+    "authFailed": "Autenticación fallida",
+    "oauthUsing": "La autenticación por oauth usando",
+    "failed": "fallo",
+    "loginPageBtn": "Ir a la página de autenticación",
+    "loginSuggestion": "Puede intentar ingresar utilizando otro servicio de oauth."
+  }
+}

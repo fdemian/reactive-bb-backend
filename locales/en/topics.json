@@ -1,0 +1,14 @@
+{
+  "topics": {
+    "topics": "Topics",
+    "author": "Author",
+    "created": "Created",
+    "replies": "Replies",
+    "views": "Views",
+    "noTopics": "There are currently no topics in the forum.",
+    "createTopic": "Create new topic",
+    "newTopic": "New topic",
+    "allCategories": "All categories",
+    "categories": "Categories"
+  }
+}

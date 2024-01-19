@@ -1,0 +1,12 @@
+{
+  "oauth": {
+    "loggingIn": "Loggin In",
+    "waitWarning": "Please wait",
+    "loggingInWith": "Logging in with",
+    "authFailed": "Authentication failed",
+    "oauthUsing": "Oauth authentication using",
+    "failed": "failed",
+    "loginPageBtn": "Go to login page",
+    "loginSuggestion": "You can try logging in using a different service"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "posts": {
+     "main": {
+       "reply": "Reply",
+       "loginToReply": "Login to reply",
+       "home": "Home",
+       "views": "Views",
+       "replies": "Replies"
+     },
+     "footer": {
+       "quote": "Quote",
+       "likes": "likes",
+       "noLikes": "No one liked this post yet.",
+       "replyAsTopic": "Reply as new topic",
+       "flagPost": "Flag post",
+       "likePost": "Like this post",
+       "bookmarkPost": "Bookmark this post"
+     },
+     "mod": {
+       "edit": "Edit",
+       "delete": "Delete",
+       "cancelEdit": "Cancel edit",
+       "confirmEdit": "Confirm edit",
+       "edited": "EDITED",
+       "editByMod": "This post has been edited by a moderator",
+       "closeTopic": "Close topic",
+       "reopenTopic": "Reopen topic",
+       "deleteTopic": "Delete topic"
+     },
+     "replyDrawer": {
+       "replyTo": "Replying to",
+       "discard": "Discard",
+       "post": "Post"
+     },
+     "search": {
+       "title": "Search",
+       "home": "Home",
+       "youSearch": "You searched for",
+       "in": "in",
+       "notSearch": "You have not yet searched for anything",
+       "searchIn": "Search in",
+       "searchInDescription": "Where to look for the given search term.",
+       "searchWhat": "Search term",
+       "searchWhatDescription": "What to search for",
+       "goToPost": "Go to post"
+     }
+   }
+}

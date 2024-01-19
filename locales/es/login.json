@@ -1,0 +1,16 @@
+{
+  "login": {
+     "login": "Ingresar",
+     "usernamePlaceholder": " Ingrese su nombre de usuario",
+     "usernameError": "¡Por favor, ingrese su nombre de usuario!",
+     "passwordPlaceholder": " Ingrese contraseña",
+     "passwordError": "¡Por vavor, ingrese su contraseña!",
+     "forgotPass": "¿Olvidó su contraseña?",
+     "loginServerError": "La combinación de usuario y contraseña es incorrecta.",
+     "error": "Error",
+     "oauthLogins": "Ingresos alternativos",
+     "logInPopup": "Ingresar usando",
+     "loadingLogIn": "Iniciando sesión",
+     "pleaseWait": "Por favor, espere"
+  }
+}

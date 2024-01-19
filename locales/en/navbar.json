@@ -1,0 +1,30 @@
+{
+  "navbar": {
+    "menuTrigger": "Open menu",
+    "login": "Login",
+    "bookmarks": "Bookmarks",
+    "register": "Register",
+    "user": "User",
+    "newStory": "New Story",
+    "categories": "Categories",
+    "settings": "Settings",
+    "logout": "Log out",
+    "profile": "Profile",
+    "chats": "Chats",
+    "modcp": "Moderation panel",
+    "admincp": "Administration panel",
+    "messages": "Messages",
+    "notifications": "Notifications",
+    "notificationsDisabled": "Notifications disabled",
+    "noNotifications": "There are no unread notifications",
+    "messagingDisabled": "Messaging disabled",
+    "markAllNotificationsRead": "Mark all notifications read",
+    "seeAllNotifications": "See all notifications",
+    "likedPost": "liked your post",
+    "mentionUser": "mentioned you in a topic",
+    "dismissMessages": "Dimisss messages",
+    "seeAllMessages": "See all messages",
+    "noMessages": "There are no new chats in your inbox.",
+    "searchTopics":  "Search topics, posts..."
+  }
+}

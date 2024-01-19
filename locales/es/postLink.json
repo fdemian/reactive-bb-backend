@@ -1,0 +1,11 @@
+{
+  "postLink": {
+    "postAccessError": "No fue posible acceder al post",
+    "invalidLink": "Parece que siguio un vínculo inválido",
+    "canDoText": "Esto es lo que puede intentar",
+    "postDeleted": "El post puede haber sido eliminado",
+    "searchPosts": "Intente buscar posts/temas similares utilizando palabras en clave apropiadas",
+    "topicDeleted": "El tema puede haber sido borrado",
+    "goMainPage": "Ir a la página principal"
+  }
+}

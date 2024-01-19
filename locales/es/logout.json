@@ -1,0 +1,15 @@
+{
+  "logout": {
+    "title": "Su sessión ha sido cerrada.",
+    "subTitle": "Parece que su tiempo de sesion ha expirado.",
+    "logIn": "Ingresar",
+    "mainPageLink": "Ir a la pagina principal",
+    "timedOutSession": "Su sesión ha expirado.",
+    "sessionNotRenewed": "Es posible que su sesión no haya sido renovada.",
+    "sessionNotRenewedPage": "Quizas cerro la pagina y volvio luego de que la sesión haya expirado.",
+    "youCan": "Puede",
+    "logBackIn": "volver a ingresar",
+    "or": "ó",
+    "goBack": "ir a la pagina principal"
+  }
+}

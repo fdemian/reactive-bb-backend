@@ -1,0 +1,48 @@
+{
+  "posts": {
+     "main": {
+       "reply": "Responder",
+       "loginToReply": "Ingrese para responder",
+       "home": "Inicio",
+       "views": "Vistas",
+       "replies": "Respuestas"
+     },
+     "footer": {
+       "quote": "Citar",
+       "likes": "me gusta",
+       "noLikes": "Nadie le ha dado 'me gusta' a este post.",
+       "replyAsTopic": "Responder en un nuevo tema",
+       "flagPost": "Reportar post",
+       "likePost": "Dar me gusta a este post",
+       "bookmarkPost": "Marcar post como favorito"
+     },
+     "mod": {
+       "edit": "Editar",
+       "delete": "Borrar",
+       "cancelEdit": "Cancelar edición",
+       "confirmEdit": "Confirmar edición",
+       "edited": "EDITADO",
+       "editByMod": "Este post fue editado por un moderador",
+       "closeTopic": "Cerrar tema",
+       "reopenTopic": "Reabrir tema",
+       "deleteTopic": "Borrar tema"
+     },
+     "replyDrawer": {
+       "replyTo": "Responder a",
+       "discard": "Descartar",
+       "post": "Post"
+     },
+     "search": {
+       "title": "Buscar",
+       "home": "Inicio",
+       "youSearch": "Ha buscado",
+       "in": "en",
+       "notSearch": "No ha buscado nada aún",
+       "searchIn": "Buscar en",
+       "searchInDescription": "Donde buscar el termino dado.",
+       "searchWhat": "Término de búsqueda",
+       "searchWhatDescription": "Que buscar",
+       "goToPost": "Ir al post"
+     }
+   }
+}

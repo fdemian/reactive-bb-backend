@@ -1,0 +1,14 @@
+{
+  "topics": {
+    "topics": "Temas",
+    "author": "Autor",
+    "created": "Creado",
+    "replies": "Respuestas",
+    "views": "Vistas",
+    "noTopics": "No hay temas en el foro actualmente.",
+    "createTopic": "Crear nuevo tema",
+    "newTopic": "Nuevo tema",
+    "allCategories": "Todas las categorías",
+    "categories": "Categorías"
+  }
+}

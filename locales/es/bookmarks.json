@@ -1,0 +1,9 @@
+{
+  "bookmarks": {
+     "bookmarks": "Marcadores",
+     "goToBookmark": "Ir al marcador",
+     "removeBookmark": "Quitar marcador",
+     "noBookmarks": "No hay marcadores",
+     "error": "Error obteniendo marcadores"
+  }
+}

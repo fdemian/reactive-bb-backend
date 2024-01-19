@@ -1,0 +1,17 @@
+{
+  "chats": {
+    "title": "Messages",
+    "clear": "Clear",
+    "send": "Send",
+    "newConversation": "New conversation",
+    "close": "Close",
+    "noMessages": "Looks like there are no messages",
+    "startConversation": "Start a conversation",
+    "oneUserSelectedError": "Only one user can be selected",
+    "userNameInputError": "Please input your username!",
+    "user": "User",
+    "userMentionPlaceholder": "Select user with @<username>",
+    "message": "Message",
+    "sendMessage": "Send message"
+   }
+}

@@ -1,0 +1,11 @@
+{
+  "postLink": {
+    "postAccessError": "Could not access post",
+    "invalidLink": "Looks like you followed an invalid link",
+    "canDoText": "Here is what you can do",
+    "postDeleted": "The post may have been deleted",
+    "searchPosts": "Try searching for similar posts/topics using reelevant keywords",
+    "topicDeleted": "The topic may have been deleted as well",
+    "goMainPage": "Go to the main page."
+  }
+}

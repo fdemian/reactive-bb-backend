@@ -1,0 +1,34 @@
+{
+  "modcp": {
+    "flaggedMsg": "Mensajes flaggeados",
+    "flagReason-0": "¿Porque decidio marcar este post?",
+    "flagReason-1": "Este post contiene spam",
+    "flagReason-2": "Este post contiene información personal",
+    "flagReason-3": "Este post es ofensivo",
+    "flagReason-other": "Otro (especifique)",
+    "noFlaggedPosts": "No hay posts flaggeados",
+    "bannedUsers": "Suspender usuarios",
+    "user": "Usuario",
+    "successfulBan": "suspendido con éxito",
+    "back": "Volver",
+    "home": "Inicio",
+    "liftBan": "Levantar suspensión",
+    "expirationDate": "Fecha de expiración",
+    "banEndTooltip": "Indicar cuando expira la suspensión. Debe marcar 'permanente' si la misma no expira.",
+    "permanent": "Permanente",
+    "justification": "Justificación",
+    "justificationTooltip": "Indica la razón por la cual este usuario esta siendo suspendido. Esto será visible para el usuario suspendido y los administradores.",
+    "banUser": "Suspender usuario",
+    "reviewBan": "Revisar suspensión",
+    "notBanned": "No suspendido",
+    "permanentlyBanned": "Suspendido permanentemente",
+    "bannedUntil": "Suspendido hasta",
+    "banReason": "Razón de la suspensión",
+    "banRemoved": "Suspensión levantada con éxito",
+    "searchUsers": "Buscar usuarios"
+  },
+  "admincp": {
+     "editedPosts": "Posts editados",
+     "noModLogs": "No hay logs de moderación disponibles"
+  }
+}

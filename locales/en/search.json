@@ -1,0 +1,18 @@
+{
+  "search": {
+    "error": "Error",
+    "search": "Search",
+    "noMatch": "Looks like there are no results that match your search.",
+    "searchIn": "Search in",
+    "searchInDetail": "Where to look for the given search term.",
+    "searchTerm": "Search term",
+    "searchTermDetail": "What to search for",
+    "searchedFor": "You searched for",
+    "noSearch": "You have not yet searched for anything",
+    "in": "in",
+    "topics": "topics",
+    "posts": "posts",
+    "topicTitles": "Topic titles",
+    "postSearch": "Posts"
+  }
+}

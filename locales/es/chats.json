@@ -1,0 +1,17 @@
+{
+  "chats": {
+    "title": "Mensajes",
+    "clear": "Borrar",
+    "send": "Enviar",
+    "close": "Cerrar",
+    "newConversation": "Nueva conversación",
+    "noMessages": "Parece que no hay mensajes",
+    "startConversation": "Iniciar una conversación",
+    "oneUserSelectedError": "Solo un usuario puede ser elegido a la vez",
+    "userNameInputError": "Por favor, ingrese su nombre de usuario-",
+    "user": "Usuario",
+    "userMentionPlaceholder": "Seleccione usuario con @<nombre de usuario>",
+    "message": "Mensaje",
+    "sendMessage": "Envíar mensaje"
+   }
+}

@@ -1,0 +1,17 @@
+{
+  "categories": {
+    "categories": "Categories",
+    "newCategory": "New",
+    "createCategory": "Create category",
+    "name": "Name",
+    "nameMessage": "Please enter a name for this category.",
+    "namePlaceholder": " Name of the category.",
+    "description": "Description",
+    "descriptionMessage": "Please enter a description for this category.",
+    "descriptionPlaceholder": " Enter a description for the category.",
+    "discard": "Discard",
+    "create": "Create",
+    "uncategorized": "Uncategorized",
+    "uncategorizedDescription": "Default category."
+  }
+}

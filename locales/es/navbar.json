@@ -1,0 +1,30 @@
+{
+  "navbar": {
+    "menuTrigger": "Abrir menu",
+    "login": "Ingresar",
+    "bookmarks": "Marcadores",
+    "register": "Registrarse",
+    "user": "Usuario",
+    "newStory": "Nueva historia",
+    "categories": "Categorías",
+    "settings": "Ajustes",
+    "logout": "Cerrar sesión",
+    "profile": "Perfil",
+    "chats": "Chats",
+    "modcp": "Panel de moderación",
+    "admincp": "Panel de administración",
+    "messages": "Mensajes",
+    "notifications": "Notificaciones",
+    "notificationsDisabled": "Notificaciones deshabilitadas",
+    "noNotifications": "No hay notificaciones sin leer",
+    "markAllNotificationsRead": "Marcar las notificaciones como leidas",
+    "seeAllNotifications": "Ver todas las notificaciones",
+    "likedPost": "le dio me gusta a tu post",
+    "mentionUser": "te ha mencionado en un post",
+    "dismissMessages": "Borrar mensajes",
+    "seeAllMessages": "Ver todos los messages",
+    "messagingDisabled": "Mensajes deshabilitados",
+    "noMessages": "No hay conversaciones nuevas en tu casilla." ,
+    "searchTopics":  "Buscar temas, posts..."
+  }
+}
