@@ -1,0 +1,263 @@
+scalar Datetime
+scalar Upload
+scalar JSON
+
+type User {
+    id: Int!
+    avatar: String
+    username: String!
+    fullname: String!
+    type: String!
+    email: String!
+    link: String!
+    status: String
+    about: String
+    banned: Boolean!
+    banReason: String
+    banExpires: Datetime
+    lockoutTime: Datetime
+}
+
+type Post {
+    id: Int!
+    content: String!
+    edited: Boolean!
+    created: Datetime!
+    user: User!
+    likes: [Like!]
+    likeCount: Int!
+    topicId: Int!
+}
+
+type Like {
+    id: Int!
+    userId: Int!
+    postId: Int!
+    post: Post!
+}
+
+type Bookmark {
+    id: Int!
+    userId: Int!
+    postId: Int!
+    post: Post
+}
+
+type Category {
+    id: Int!
+    name: String!
+    description: String!
+    topics: [Topic!]
+}
+
+type Topic {
+    id: Int!
+    name: String!
+    views: Int!
+    replies: Int!
+    created: Datetime!
+    closed: Boolean!
+    pinned: Boolean!
+    tags: String
+    user: User!
+    category: Category
+}
+
+type MutationIdPayload {
+    ok: Boolean!
+    id: Int
+}
+
+type FileUploadResponse {
+    id: Int!
+    url: String!
+    ok: Boolean!
+}
+
+type ImageUploadResponse {
+    src: String!
+}
+
+type UserMutationPayload {
+    ok: Boolean!
+    id: Int!
+    email: String!
+    message: String!
+}
+
+type LikeMutationPayload {
+    ok: Boolean!
+    id: Int!
+    postId: Int!
+    likes: Int!
+}
+
+type BookmarkMutationPayload {
+    ok: Boolean!
+    id: Int!
+    postId: Int!
+    userId: Int!
+}
+
+type Config {
+    config: JSON!
+    oauth: JSON!
+}
+
+type EditPostResponse {
+    id: Int
+    ok: Boolean!
+    content: JSON
+}
+
+type TopicsReponse {
+    topics: [Topic!]
+    topicsCount: Int!
+}
+
+type SearchResult {
+    id: Int!
+    text: String!
+    topicId: Int!
+    topic: String!
+}
+
+type SearchResponse {
+    results: [SearchResult!]
+    total: Int!
+}
+
+type PostLinkResponse {
+    name: String!
+    page: Int!
+    topicId: Int!
+}
+
+type NotificationResponse {
+    id: Int!
+    link: String!
+    type: String!
+    read: Boolean!
+    user: User!
+    originator: User!
+}
+
+type CheckUsernameResponse {
+    exists: Boolean!
+    message: String!
+}
+
+type OauthResponse {
+    user: User!
+    ok: Boolean!
+}
+
+type ChatMessage {
+    content: JSON!
+    date: Datetime!
+    author: User!
+    recipient: User!
+}
+
+type ChatNotification {
+    read: Boolean!
+    author: User!
+    recipient: User!
+}
+
+type FlaggedPost {
+    postId: Int!
+    userId: Int!
+    reasonId: Int!
+    reasonText: String
+}
+
+type RemoveFlagResponse {
+    ok: Boolean!
+    postId: Int!
+    userId: Int!
+}
+
+type UserPostEdit {
+    id: Int!
+    avatar: String
+    username: String!
+}
+
+type PostEdit {
+    user: UserPostEdit!
+    date:  Datetime!
+    previous: JSON!
+    current: JSON!
+}
+
+type PostEditsResponse {
+    postEdits: [PostEdit!],
+    editsCount: Int!
+}
+
+type Query {
+    getUser(id:Int!): User
+    topics(offset: Int!, limit: Int!): TopicsReponse!
+    topic(id: Int!): Topic
+    pinnedTopics: [Topic!]
+    posts(topicId: Int!, offset: Int!, limit: Int!): [Post!]
+    flaggedPosts(offset: Int!, limit: Int!): [FlaggedPost!]
+    search(term: String!, where: [String!], offset: Int!, limit: Int!): SearchResponse
+    postLink(post: Int!, itemscount: Int!): PostLinkResponse!
+    categories: [Category!]
+    category(id: Int!): Category!
+    likesByUser(id: Int!): [Like!]
+    topicsByUser(id: Int!): [Topic!]
+    postsByUser(id: Int!): [Post!]
+    mentionCandidates(search: String!): [User!]
+    bookmarksByUser(user: Int!): [Bookmark!]
+    bookmarksByPostList(user: Int!, posts: [Int!]): [Bookmark!]
+    config: Config!
+    checkUsername(username: String!): CheckUsernameResponse!
+    notifications(user: Int!): [NotificationResponse!]
+    allNotifications(user: Int!, limit: Int!, offset: Int!): [NotificationResponse!]
+    chatsByUser(user: Int!): [User!]
+    chat(userA: Int!, userB: Int!, offset: Int!, limit: Int!): [ChatMessage!]
+    postEdits(offset: Int!, limit: Int!): PostEditsResponse
+}
+
+type Mutation {
+    banUser(user: Int!, expires: Datetime, reason: String!): Boolean
+    removeUserBan(user: Int!): Boolean
+    sendMessage(author: Int!, recipient: Int!, message: JSON!, newchat: Boolean!): Boolean!
+    createTopic(name: String!, content:String!, user:Int!, category: Int, tags: String): MutationIdPayload
+    closeTopic(topic: Int!): Boolean!
+    reopenTopic(topic: Int!): Boolean!
+    deleteTopic(topic: Int!): Boolean!
+    pinTopic(topic: Int!): Boolean!
+    createPost(user: Int!, topic:Int!, content:JSON!): Post!
+    editPost(post: Int!, user: Int!, content: JSON!): EditPostResponse
+    deletePost(post: Int! user: Int): MutationIdPayload
+    createUser(username: String!, password: String!, email: String!): UserMutationPayload
+    validateUser(token: String!): MutationIdPayload
+    createCategory(name: String!, description: String!): Category!
+    updatePassword(id: Int!, currentPass: String!, newPass: String!): MutationIdPayload
+    uploadUserImage(image: Upload!, id: Int!): FileUploadResponse
+    uploadImage(image: Upload!): ImageUploadResponse
+    removeUserImage(id: Int!): Boolean
+    resetPasswordRequest(email: String!): Boolean
+    resetPassword(token: String!, password: String!): Boolean
+    updateEmail(id: Int!, email: String!): Boolean!
+    updateProfile(id: Int!, status:String, about:String): MutationIdPayload
+    increaseViewCount(topic:Int!): MutationIdPayload
+    likePost(user:Int!, originator: Int!, topic: Int!, post: Int!): LikeMutationPayload
+    flagPost(post: Int!, user:Int!, reason: Int!, text: String): Boolean
+    removeFlag(post: Int!, user:Int!): RemoveFlagResponse
+    removeLike(user:Int!, post: Int!): LikeMutationPayload
+    bookmarkPost(user:Int!, post: Int!): BookmarkMutationPayload
+    removeBookmark(user:Int!, post: Int!): BookmarkMutationPayload
+    setMentions(link:String!, user:String!, mentioned:[String!]): Boolean
+    markNotificationsRead(notifications: [Int!]): [Int!]
+}
+
+type Subscription {
+    notificationAdded(user: Int!): NotificationResponse
+    chatAdded(userA: Int!, userB: Int!): ChatMessage
+    chatNotification(user: Int!): ChatNotification
+}
