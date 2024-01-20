@@ -10,8 +10,8 @@
   "forum": {
     "name": "Morpheus",
     "description": "A web forum",
-    "logoURL": "/static/logo.svg",
-    "faviconURL": "/static/logo.svg",
+    "logoURL": "/static/uploads/logo.svg",
+    "faviconURL": "/static/uploads/logo.svg",
     "faviconType": "image/x-icon",
     "items_per_page": "10"
   },
