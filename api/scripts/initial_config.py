@@ -1,7 +1,8 @@
 import shutil
 import json
-from os import path, mkdir
+from os import path, mkdir, remove
 from os.path import isdir
+from shutil import rmtree
 
 config_dir = "../../config"
 config_dir_path = path.join(path.dirname(__file__), config_dir)
@@ -28,6 +29,23 @@ def create_directories():
 
     if not isdir(avatars_dir):
         mkdir(avatars_dir)
+
+
+def delete_directories():
+
+    uploads_dir = path.join(root_path, "uploads")
+    avatars_dir = path.join(path.join(root_path, "static"), "avatars")
+
+    if isdir(uploads_dir):
+        rmtree(uploads_dir)
+
+    if isdir(avatars_dir):
+        rmtree(avatars_dir)
+
+
+def delete_config_file(config_file_path):
+    if path.isfile(config_file_path):
+        remove(config_file_path)
 
 
 def copy_config_file(env):

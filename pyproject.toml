@@ -31,7 +31,7 @@ broadcaster = "^0.2.0"
 mypy = "^1.8.0"
 sqlalchemy = "^2.0.25"
 asyncpg = "^0.29.0"
-ruff = "^0.1.13"
+ruff = "^0.1.14"
 
 
 [build-system]

@@ -1,5 +1,5 @@
 from os import path
-from api.read_config import get_database_url_options
+from api.database.utils import get_database_url_options
 from api.utils.utils import parse_config_file
 from sqlalchemy_utils import database_exists, drop_database
 

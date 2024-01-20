@@ -31,5 +31,6 @@ def create_db_and_upgrade():
     create_database_if_not_exists(database_url)
     run_migrations(str(database_url))
 
+
 def main():
     create_db_and_upgrade()
