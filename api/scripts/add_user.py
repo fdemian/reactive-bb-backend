@@ -55,6 +55,10 @@ def do_save_user(user_to_save, session, *args, **kwargs):
 
 
 def add_user():
+    from api.read_config import config_to_environ_sync
+
+    config_to_environ_sync()
+
     username = input("Choose a username: ")
     password = getpass("Choose a password: ")
     email = input("Enter a valid email address: ")
@@ -71,6 +75,8 @@ def add_user():
         "lockout_time": None,
         "type": type,
         "banned": False,
+        "banReason": None,
+        "banExpirationTime": None
     }
 
     db_engine = get_engine()
