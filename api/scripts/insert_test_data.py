@@ -32,7 +32,7 @@ def insert_actual_data(session):
 
 def insert_test_data():
     config_to_environ_sync()
-    from api.engine import db_engine
+    db_engine = get_engine()
 
     with Session(db_engine) as session:
         return insert_actual_data(session)

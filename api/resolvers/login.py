@@ -76,7 +76,7 @@ def authenticate_user(
         if user is None:
             logger.info(f"Requested nonexistent user: {username}")
             user = get_mock_user()
-            hash_password(user.password, b"")
+            hash_password("*****", b"")
             user_exists = False
         else:
             # logger.info("User exists and is: " + username)
