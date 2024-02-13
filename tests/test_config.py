@@ -26,7 +26,7 @@ async def test_default_config():
     oauth = data["oauth"]
 
     assert config["name"] == "Morpheus"
-    assert config["description"] == "Morpheus a forum engine."
+    assert config["description"] == "A web forum"
     assert int(config["items_per_page"]) == 10
     assert response.status_code == 200
     assert "redirectURI" in oauth

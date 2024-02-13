@@ -48,6 +48,7 @@ def setup_test_database():
     """
     config_to_environ_sync(testing=True)
     database_url = get_database_url().render_as_string(hide_password=False)
+    
     from api.database.utils import get_engine
     from api.scripts.insert_test_data import insert_test_data_db
     from api.resolvers.queries.user import get_user_for_db_test
