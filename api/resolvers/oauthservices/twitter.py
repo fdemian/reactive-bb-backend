@@ -1,4 +1,5 @@
 import json
+from rauth import OAuth2Service
 
 
 def data_to_dict(data):

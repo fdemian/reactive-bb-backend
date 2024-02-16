@@ -1,5 +1,7 @@
-import smtplib, ssl
 import logging
+import smtplib
+import ssl
+
 from .mail_helper import get_message
 
 

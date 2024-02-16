@@ -62,11 +62,11 @@ def reset_password_request(_, info, email):
 
 
 def reset_password(_, info, token, password):
-    password_reset = session.scalars(
-        select(PasswordReset).filter_by(token=token)
-    ).one_or_none()
     db_engine = get_engine_from_context(info)
     with Session(db_engine) as session:
+        password_reset = session.scalars(
+            select(PasswordReset).filter_by(token=token)
+        ).one_or_none()
         if password_reset is not None:
             user_id = password_reset.user_id
             user = session.scalars(select(User).filter_by(id=user_id)).one_or_none()

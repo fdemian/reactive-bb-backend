@@ -1,9 +1,6 @@
 from starlette.middleware.base import BaseHTTPMiddleware
-from starlette.requests import Request
-
-#
-from starlette.responses import StreamingResponse
 from starlette.concurrency import iterate_in_threadpool
+
 
 class LoggingMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request, call_next):

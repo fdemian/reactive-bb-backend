@@ -223,7 +223,8 @@ async def test_edit_post(setup_test_database):
     next_post_content = (
         '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"Post#'
         + str(40)
-        + '","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        + '","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1}],'
+          '"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
     )
     prev_post_content = post_to_edit["content"]
 
@@ -445,12 +446,13 @@ async def test_view_edited_posts_fail_mod(setup_test_database):
     next_post_content = (
         '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"Post#'
         + str(40)
-        + '","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        + '","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1}],'
+          '"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
     )
     prev_post_content = post_to_edit["content"]
 
     assert response.status_code == 200
-    assert post_to_edit["content"] is not next_post_content
+    assert prev_post_content is not next_post_content
 
     # Get mod access token.
     login_data = json.dumps(

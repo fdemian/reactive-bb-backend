@@ -82,7 +82,7 @@ async def test_add_mentions(setup_test_database):
     assert len(mentions_cont) == 1
     assert mentions_cont[0]["link"] == "/topics/mention-test"
     assert mentions_cont[0]["type"] == "mention"
-    assert mentions_cont[0]["read"] == False
+    assert mentions_cont[0]["read"] is False
     assert mentions_cont[0]["originator"]["id"] == 2
     assert mentions_cont[0]["user"]["id"] == 1
 
@@ -154,6 +154,6 @@ async def test_add_mentions(setup_test_database):
     assert all_notif_cont[0]["id"] == notification_id
     assert all_notif_cont[0]["link"] == "/topics/mention-test"
     assert all_notif_cont[0]["type"] == "mention"
-    assert all_notif_cont[0]["read"] == True
+    assert all_notif_cont[0]["read"] is True
     assert all_notif_cont[0]["originator"]["id"] == 2
     assert all_notif_cont[0]["user"]["id"] == 1

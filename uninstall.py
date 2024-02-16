@@ -1,4 +1,3 @@
-import json
 import logging
 import subprocess
 from api.scripts.initial_config import delete_directories, delete_config_file

@@ -101,7 +101,7 @@ async def test_search_topics(setup_test_database):
 
 
 @pytest.mark.asyncio
-async def test_search_topics(setup_test_database):
+async def test_search_topics_title_post(setup_test_database):
     client = await get_test_client()
 
     from api.scripts.insertdata.insert_user import user

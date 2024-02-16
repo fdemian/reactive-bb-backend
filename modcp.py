@@ -17,7 +17,7 @@ if __name__ == "__main__":
     program_command = args.command[0]
     # program_file = args.file[0]
 
-    if program_command == None:
+    if program_command is None:
         program_command = "User"
 
     command = None

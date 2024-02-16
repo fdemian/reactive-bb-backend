@@ -18,7 +18,7 @@ def get_facebook_auth_data(code, service_opts):
         )
         redirect_uri = "https://www.facebook.com/connect/login_success.html"
         params = {"code": code, "redirect_uri": redirect_uri}
-        session = facebook.get_auth_session(data=params)
+        session = client.get_auth_session(data=params)
         return session.get("me").json()
     except Exception as e:
         print(e)

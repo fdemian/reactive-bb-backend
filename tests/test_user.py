@@ -337,7 +337,7 @@ async def test_update_password(setup_test_database):
     fail_login_resp = client.post("/api/login", data=fail_login_data)
     fail_login_cont = json.loads(fail_login_resp.text)
 
-    assert fail_login_cont["ok"] == False
+    assert fail_login_cont["ok"] is False
     assert fail_login_cont["id"] is None
     assert fail_login_cont["ttl"] == ""
 
@@ -367,7 +367,7 @@ async def test_update_password(setup_test_database):
     bad_login_resp = client.post("/api/login", data=login_data)
     bad_login_cont = json.loads(bad_login_resp.text)
 
-    assert bad_login_cont["ok"] == False
+    assert bad_login_cont["ok"] is False
     assert bad_login_cont["id"] is None
     assert bad_login_cont["ttl"] == ""
 
@@ -376,6 +376,6 @@ async def test_update_password(setup_test_database):
     new_login_resp = client.post("/api/login", data=new_login_data)
     new_login_cont = json.loads(new_login_resp.text)
 
-    assert new_login_cont["ok"] == True
+    assert new_login_cont["ok"] is True
     assert new_login_cont["id"] is not None
     assert new_login_cont["ttl"] != ""

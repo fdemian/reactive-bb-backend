@@ -19,7 +19,7 @@ ALEMBIC_CONFIG_PATH = os.path.join(ALEMBIC_PATH, "alembic.ini")
 
 @pytest.hookimpl(hookwrapper=False)
 def pytest_exception_interact(node, call, report):
-    config_to_env_sync(testing=True)
+    config_to_environ_sync(testing=True)
     database_url = get_database_url()
     if report.failed:
         # call.excinfo contains an ExceptionInfo instance

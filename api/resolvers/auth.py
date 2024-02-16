@@ -39,11 +39,11 @@ def auth_flow_response(user, jwt_settings):
     refresh_expiration = jwt_settings["refresh"]["expiration"]
     server_opts = json.loads(environ["SERVER"])
     is_prod = bool(server_opts["production"])
-    domain = None
+    #domain = None
     samesite = "lax"
     if is_prod:
         samesite = "strict"
-        domain = server_opts["domain"]
+        #domain = server_opts["domain"]
     try:
         response = JSONResponse(
             {
