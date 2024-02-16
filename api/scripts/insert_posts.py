@@ -1,4 +1,3 @@
-from api.database.utils import get_engine
 from api.database.models import Post
 from os import path
 from datetime import datetime
@@ -21,16 +20,3 @@ def create_post(user_id, topic_id, number):
     post.created = current_date
 
     return post
-
-
-def insert_all_posts():
-    engine = get_engine(db_name)
-    with Session(engine) as session:
-        for n in range(500):
-            user_id = 1
-            topic_id = 2
-            post = create_post(user_id, topic_id, n)
-            #
-            session.add(post)
-
-        session.commit()
