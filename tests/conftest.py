@@ -10,11 +10,21 @@ from api.database.utils import get_database_url
 
 #
 from api.database.utils import get_engine
-from broadcaster import Broadcast
 
 
 ALEMBIC_PATH = "api/database"
 ALEMBIC_CONFIG_PATH = os.path.join(ALEMBIC_PATH, "alembic.ini")
+
+
+class MockBroadcast:
+    def __init__(self):
+        pass
+
+    def publish(self):
+        pass
+
+    def subscribe(self):
+        pass
 
 
 @pytest.hookimpl(hookwrapper=False)
@@ -31,13 +41,12 @@ def pytest_exception_interact(node, call, report):
 async def get_test_client():
     await config_to_environ(testing=True)
     from api.app import get_main_app
-
     app = get_main_app()
-    broadcast = Broadcast("memory://")
-    await broadcast.connect()
+    #broadcast = Broadcast("memory://")
+    #await broadcast.connect()
     engine = get_engine()
     app.state.engine = engine
-    app.state.broadcast = broadcast
+    app.state.broadcast = MockBroadcast()
     return TestClient(app)
 
 

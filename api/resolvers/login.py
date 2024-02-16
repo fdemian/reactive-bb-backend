@@ -161,8 +161,6 @@ def user_is_locked(session: Session, user: User, lockout_time: int) -> bool:
         return False
 
     time_elapsed: datetime = datetime.now() - user.lockout_time
-    print(time_elapsed.seconds)
-    print(time_elapsed.second)
     if time_elapsed.seconds > (lockout_time * 60):
         unlock_user(session, user)
         return False

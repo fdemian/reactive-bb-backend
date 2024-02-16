@@ -1,6 +1,6 @@
 import json
 import logging
-from starlette.config import environ
+from starlette.config import environ, EnvironError
 from os import path
 from api.utils.utils import async_json_file_read, parse_config_file
 
@@ -22,7 +22,7 @@ def config_to_environ_sync(**kwargs) -> None:
         environ["OAUTH"] = json.dumps(config_json["oauth"])
         if kwargs.get("testing") is not None:
             environ["TESTING"] = "True"
-    except:
+    except EnvironError:
         logger = logging.getLogger("admin.graphql")
         logger.error("[READ CONFIG ERROR]")
 
