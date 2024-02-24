@@ -1,14 +1,19 @@
 import logging
+import tomli
 import subprocess
 from api.scripts.initial_config import delete_directories, delete_config_file
 
-# TODO: this list of packages should not be maintained manually, since it is too cumbersome to modify.
-packages_to_uninstall = "ariadne alembic psycopg2-binary pyjwt starlette python-multipart gunicorn rauth " \
-                        "aiohttp aiofiles sqlalchemy-utils websockets graphql-core anyio uvicorn pytest " \
-                        "pytest-asyncio pytest-cov coverage broadcaster mypy sqlalchemy asyncpg ruff"
+
+def get_packages_to_remove():
+    with open("pyproject.toml", "rb") as f:
+        toml_dict = tomli.load(f)
+        dependencies_dict = toml_dict['tool']['poetry']['dependencies']
+        packages = list(dependencies_dict.keys())
+        return packages
 
 
 def remove_packages():
+    packages_to_uninstall = str(get_packages_to_remove())
     cmd_str = "poetry remove " + packages_to_uninstall
     subprocess.run(cmd_str, shell=True)
 

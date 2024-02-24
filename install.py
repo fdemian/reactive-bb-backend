@@ -4,13 +4,9 @@ import subprocess
 from api.scripts.initial_config import create_directories
 from api.scripts.initial_config import get_config_opts
 
-packages_to_install = "ariadne alembic psycopg2-binary pyjwt starlette python-multipart gunicorn rauth " \
-                        "aiohttp aiofiles sqlalchemy-utils websockets graphql-core anyio uvicorn pytest " \
-                        "pytest-asyncio pytest-cov coverage broadcaster mypy sqlalchemy asyncpg ruff"
-
 
 def install_packages():
-    cmd_str = "poetry add " + packages_to_install
+    cmd_str = "poetry install"
     subprocess.run(cmd_str, shell=True)
 
 
