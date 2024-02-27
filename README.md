@@ -17,7 +17,7 @@ The following packages must be installed on the target machine for the applicati
 
 1) Run the installation script and fill in the necessary information:
 
-`python3 install.py`
+`poetry run python3.11 install.py`
 
 The script will ask you for information, generate the config files, create the database and associated directories.
 

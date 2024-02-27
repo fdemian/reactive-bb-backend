@@ -10,14 +10,6 @@ def install_packages():
     subprocess.run(cmd_str, shell=True)
 
 
-def create_database():
-    cmd_str = "poetry run createdb"
-    subprocess.run(cmd_str, shell=True)
-
-def run_migrations():
-    cmd_str = "poetry run db_upgrade"
-    subprocess.run(cmd_str, shell=True)
-
 def get_db_input():
     logging.debug("Getting database input")
     print("====== DATABASE INFO ======")
@@ -132,10 +124,8 @@ if __name__ == "__main__":
 
     # Create database
     logging.debug("Creating database")
-    create_database()
-
-    logging.debug("Running migrations")
-    run_migrations()
+    from api.scripts.create_database import create_db_and_upgrade
+    create_db_and_upgrade()
 
     # Finished installation
     logging.debug("Installation finished correctly")

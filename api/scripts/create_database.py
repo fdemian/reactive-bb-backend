@@ -29,7 +29,6 @@ def create_db_and_upgrade():
     options = parse_config_file(config_file_path)
     database_url = get_database_url_options(options)
     create_database_if_not_exists(database_url)
-    print(database_url.render_as_string(hide_password=False))
     run_migrations(database_url.render_as_string(hide_password=False))
 
 
