@@ -20,7 +20,7 @@ class MockBroadcast:
     def __init__(self):
         pass
 
-    def publish(self):
+    def publish(self, channel, message):
         pass
 
     def subscribe(self):
