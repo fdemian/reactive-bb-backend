@@ -64,6 +64,8 @@ async def test_ban_users_correctly(setup_test_database):
     }
 
     ban_resp = client.post("/api/graphql", headers=headers, data=json.dumps(ban_data))
+    print(ban_resp.content)
+    print("@@@@@@@@@@@@@@@@@@@@@@")
     ban_data = json.loads(ban_resp.content)["data"]["banUser"]
     assert ban_data is True
 
