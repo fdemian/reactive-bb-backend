@@ -4,6 +4,7 @@ from api.resolvers.auth import login_required, mod_required
 from sqlalchemy.orm import Session
 from api.engine import get_engine_from_context
 from sqlalchemy import select
+from sqlalchemy.exc import SQLAlchemyError
 
 
 @login_required
@@ -16,7 +17,7 @@ async def increase_view_count(_, info, topic):
             session.add(topic)
             session.commit()
             return {"ok": True, "id": topic.id}
-        except:
+        except SQLAlchemyError:
             return {"ok": False, "id": None}
 
 

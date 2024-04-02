@@ -1,4 +1,5 @@
 from sqlalchemy import select
+from sqlalchemy.orm.exc import MultipleResultsFound, NoResultFound
 from api.database.models import Post, Topic
 from ariadne.exceptions import HttpError
 from math import ceil
@@ -54,5 +55,7 @@ def resolve_post_link(_, info, post, itemscount):
 
             topic_obj = session.scalars(select(Topic).filter_by(id=topic)).one()
             return {"topicId": topic, "page": page_number, "name": topic_obj.name}
-        except:
+        except MultipleResultsFound:
+            raise HttpError("404")
+        except NoResultFound:
             raise HttpError("404")

@@ -6,6 +6,7 @@ from api.resolvers.auth import login_required
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 from api.utils.utils import get_app_state_from_context
+from sqlalchemy.exc import SQLAlchemyError
 
 
 @login_required
@@ -44,7 +45,7 @@ async def like_post(_, info, post, topic, user, originator):
                 channel="notificationAdded", message=json.dumps(notification)
             )
             return {"id": like.id, "ok": True, "postId": post, "likes": 0}
-        except:
+        except SQLAlchemyError:
             print(f"Unknown Error - {sys.exc_info()[1]}")
             print(f"Details - {sys.exc_info()}")
             return {"id": 0, "ok": False, "postId": post, "likes": 0}

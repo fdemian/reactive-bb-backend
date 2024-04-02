@@ -41,7 +41,7 @@ async def config_to_environ(**kwargs) -> None:
         environ["MAIL"] = json.dumps(config_json["mail"])
         environ["SECURITY"] = json.dumps(config_json["security"])
         environ["OAUTH"] = json.dumps(config_json["oauth"])
-    except:
+    except EnvironError:
         logger = logging.getLogger("admin.graphql")
         logger.info("[READ CONFIG ERROR]")
     return

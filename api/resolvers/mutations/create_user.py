@@ -9,6 +9,7 @@ import logging
 from sqlalchemy.orm import Session
 from api.engine import get_engine_from_context
 from sqlalchemy import select
+from sqlalchemy.exc import SQLAlchemyError
 
 
 def save_activation_info(activation_code, id, db_session):
@@ -79,6 +80,6 @@ def create_user(_, info, username, password, email):
                     "email": saved_user.email,
                     "message": "",
                 }
-        except:
-            logging.exception("")
+        except SQLAlchemyError:
+            logging.exception("SQLAlchemy error.")
             return {"ok": False, "id": 0, "email": "", "message": "Generic Error."}

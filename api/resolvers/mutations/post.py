@@ -4,6 +4,7 @@ from sqlalchemy import select
 from api.resolvers.auth import login_required, mod_required
 from sqlalchemy.orm import Session
 from api.engine import get_engine_from_context
+from sqlalchemy.exc import SQLAlchemyError
 
 
 def log_mod_operation(current_date, operation, mod_user):
@@ -37,7 +38,7 @@ def edit_post(_, info, post, user, content):
             session.commit()
 
             return {"id": post_to_edit.id, "ok": True, "content": content}
-        except:
+        except SQLAlchemyError:
             return {"ok": False, "id": None, "content": None}
 
 
@@ -63,7 +64,7 @@ def delete_post(_, info, post, user):
                 log_mod_operation(current_date, "POST_DELETION", mod_user)
 
             return {"ok": True, "id": post}
-        except:
+        except SQLAlchemyError:
             return {"ok": False, "id": None}
 
 
@@ -97,7 +98,7 @@ def create_post(_, info, user, topic, content):
                     "username": topic.user.username,
                 },
             }
-        except:
+        except SQLAlchemyError:
             print("Error inserting post")
             print("User {0}".format(user.username))
             print("Content {0}".format("content"))

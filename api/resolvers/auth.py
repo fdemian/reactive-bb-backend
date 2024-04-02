@@ -1,5 +1,4 @@
 import json
-import sys
 from functools import wraps
 from api.auth.auth import get_user_tokens
 from api.resolvers.queries.user import get_user_for_auth
@@ -76,9 +75,11 @@ def auth_flow_response(user, jwt_settings):
             samesite=samesite,
         )
         return response
-    except:
-        print(f"Unknown Error - {sys.exc_info()[1]}")
-        print(f"Details - {sys.exc_info()}")
+    except KeyError as e:
+        print("Key Error - key not found")
+        print("Details")
+        print(e)
+        #logging.log(e)
         return JSONResponse(
             {
                 "ok": False,
