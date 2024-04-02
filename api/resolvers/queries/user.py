@@ -5,8 +5,8 @@ from api.engine import get_engine_from_context
 from sqlalchemy import select
 
 
-def resolve_user(_, info, id):
-    db_engine = get_engine_from_context(info)
+def resolve_user(_, request, id):
+    db_engine = get_engine_from_context(request)
     with Session(db_engine) as session:
         user = get_user_if_exists(session, id)
         if not user:
@@ -52,5 +52,5 @@ def get_user_for_db_test(alt_session, user_id):
         return user
 
 
-def get_user_for_auth(user_id):
-    return resolve_user(None, None, user_id)
+def get_user_for_auth(user_id, request):
+    return resolve_user(None, request, user_id)

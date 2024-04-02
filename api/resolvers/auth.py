@@ -111,7 +111,7 @@ def mod_required(f):
         request = args[1].context["request"]
         if request.user.is_authenticated:
             user_id = request.user.display_name["user_token"]
-            user = get_user_for_auth(user_id)
+            user = get_user_for_auth(user_id, request)
             if user.type == "M" or user.type == "A":
                 return f(*args, **kwargs)
             else:
@@ -128,7 +128,7 @@ def admin_required(f):
         request = args[1].context["request"]
         if request.user.is_authenticated:
             user_id = request.user.display_name["user_token"]
-            user = get_user_for_auth(user_id)
+            user = get_user_for_auth(user_id, request)
             if user.type == "A":
                 return f(*args, **kwargs)
             else:
