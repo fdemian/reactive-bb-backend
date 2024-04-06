@@ -7,6 +7,7 @@ from sqlalchemy_utils import database_exists, create_database, drop_database
 from sqlalchemy.orm import Session
 from starlette.testclient import TestClient
 from api.database.utils import get_database_url
+from broadcaster import Broadcast
 
 #
 from api.database.utils import get_engine
@@ -42,11 +43,11 @@ async def get_test_client():
     await config_to_environ(testing=True)
     from api.app import get_main_app
     app = get_main_app()
-    #broadcast = Broadcast("memory://")
-    #await broadcast.connect()
+    broadcast = Broadcast("memory://")
+    await broadcast.connect()
     engine = get_engine()
     app.state.engine = engine
-    app.state.broadcast = MockBroadcast()
+    app.state.broadcast = broadcast
     return TestClient(app)
 
 

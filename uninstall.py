@@ -2,6 +2,7 @@ import logging
 import tomli
 import subprocess
 from api.scripts.initial_config import delete_directories, delete_config_file
+from api.scripts.create_database import delete_database
 
 
 def get_packages_to_remove():
@@ -15,11 +16,6 @@ def get_packages_to_remove():
 def remove_packages():
     packages_to_uninstall = str(get_packages_to_remove())
     cmd_str = "poetry remove " + packages_to_uninstall
-    subprocess.run(cmd_str, shell=True)
-
-
-def delete_database():
-    cmd_str = "poetry run destroydb"
     subprocess.run(cmd_str, shell=True)
 
 
@@ -52,11 +48,10 @@ if __name__ == "__main__":
     """
      All uninstallation steps are automated and do not require input from the user.
     """
-
+    
     # Delete database
     logging.debug("Deleting database")
     delete_database()
-
 
     # Remove created directories and all their files.
     logging.debug("Removing file directories")

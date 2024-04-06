@@ -1,7 +1,7 @@
 from os import path, getcwd, fchdir, open, O_RDONLY
 from api.database.utils import get_database_url_options
 from api.utils.utils import parse_config_file
-from sqlalchemy_utils import database_exists, create_database
+from sqlalchemy_utils import database_exists, create_database, drop_database
 from alembic import command
 from alembic.config import Config
 
@@ -24,6 +24,11 @@ def create_database_if_not_exists(database_url):
     if not database_exists(database_url):
         create_database(database_url)
 
+
+def delete_database():
+    options = parse_config_file(config_file_path)
+    database_url = get_database_url_options(options)
+    drop_database(database_url.render_as_string(hide_password=False))
 
 def create_db_and_upgrade():
     options = parse_config_file(config_file_path)
