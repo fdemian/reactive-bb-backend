@@ -48,7 +48,7 @@ if __name__ == "__main__":
     """
      All uninstallation steps are automated and do not require input from the user.
     """
-    
+
     # Delete database
     logging.debug("Deleting database")
     delete_database()

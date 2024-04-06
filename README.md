@@ -12,6 +12,7 @@ The following packages must be installed on the target machine for the applicati
 - [Python](https://www.python.org/) (Pick a version >= 3.11)
 - [Poetry](https://python-poetry.org/)
 - [PostgreSQL](https://www.postgresql.org/)
+- [Nginx](https://nginx.org/en/)
 
 ## Installation
 
