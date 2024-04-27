@@ -1,11 +1,11 @@
 import argparse
 from api.scripts.add_user import add_user
-
+from api.read_config import config_to_environ_sync
 if __name__ == "__main__":
     print("Moderator control panel")
     print("=======================")
 
-    # config_to_environ()
+    config_to_environ_sync()
 
     # Configuration options.
     parser = argparse.ArgumentParser(description="Moderator control panel.")

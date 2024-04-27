@@ -40,6 +40,9 @@ def resolve_topics(_, info, offset, limit):
             .offset(offset)
         ).all()
         topics_count = session.scalar(select(func.count(Topic.id)))
+        print(topics)
+        print(topics_count)
+        print("------")
         return {"topics": topics, "topicsCount": topics_count}
 
 
