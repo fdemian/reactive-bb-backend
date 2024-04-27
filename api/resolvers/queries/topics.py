@@ -34,15 +34,12 @@ def resolve_topics(_, info, offset, limit):
     with Session(db_engine) as session:
         topics = session.scalars(
             select(Topic)
-            .where(Topic.pinned is False)
+            .where(Topic.pinned == False)
             .order_by(Topic.created.desc())
             .limit(limit)
             .offset(offset)
         ).all()
         topics_count = session.scalar(select(func.count(Topic.id)))
-        print(topics)
-        print(topics_count)
-        print("------")
         return {"topics": topics, "topicsCount": topics_count}
 
 
