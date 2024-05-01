@@ -3,13 +3,11 @@ import subprocess
 
 
 def start_app():
-    cmd_str = "poetry run python3 main.py"
-    subprocess.run(cmd_str, shell=True)
+    subprocess.run("poetry run python3 main.py", shell=True)
 
 
 def start_app_background():
-    cmd_str = "poetry run python3 main.py &"
-    subprocess.run(cmd_str, shell=True)
+    subprocess.Popen(["poetry", "run", "python3.11", "main.py"])
 
 
 if __name__ == "__main__":
