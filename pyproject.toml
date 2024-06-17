@@ -43,7 +43,7 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-test = "pytest"
+test = "poetry run pytest pytest"
 test_cov = "poetry run pytest --cov=api"
 init = "api.scripts.initial_config:main"
 adduser = "api.scripts.add_user:main"
