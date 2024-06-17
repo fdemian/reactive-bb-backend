@@ -51,7 +51,7 @@ async def get_test_client():
     return TestClient(app)
 
 
-@pytest.fixture(scope="session", autouse=True)
+@pytest.fixture(autouse=True)
 def setup_test_database():
     """
     Create a clean test database with data.
@@ -85,5 +85,4 @@ def setup_test_database():
         assert user.id == 1
     assert database_exists(database_url), "Test database dropped before running code."
     yield
-    if database_exists(database_url):
-        drop_database(database_url)  # Drop the test database.
+    drop_database(database_url)  # Drop the test database.
