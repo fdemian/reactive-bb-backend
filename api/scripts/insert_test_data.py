@@ -26,7 +26,8 @@ def insert_actual_data(session):
     numbered_posts = generate_numbered_posts(1000)
     posts = [{"text": p, "user": user_id} for p in numbered_posts]
     topic = generate_topic("T-1000", user_id, category_id, posts)
-    insert_topic(session, topic)
+    t_id = insert_topic(session, topic)
+    assert t_id == 1
     return user_id
 
 

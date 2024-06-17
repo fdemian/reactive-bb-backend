@@ -85,4 +85,5 @@ def setup_test_database():
         assert user.id == 1
     assert database_exists(database_url), "Test database dropped before running code."
     yield
-    drop_database(database_url)  # Drop the test database.
+    if database_exists(database_url):
+        drop_database(database_url)  # Drop the test database.

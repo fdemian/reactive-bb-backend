@@ -42,8 +42,8 @@ def resolve_search(_, info, term, where, offset, limit):
         try:
             if "titles" in where:
                 topics_from_db = session.scalars(
-                    select(Topic.name, Topic.pinned, Topic.created, Topic.id)
-                    .where(column("name").match(term))
+                    select(Topic)
+                    .where(column("topics.name", is_literal=True).match(term))
                     .limit(limit)
                     .offset(offset)
                 ).all()

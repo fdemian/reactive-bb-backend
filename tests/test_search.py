@@ -142,6 +142,9 @@ async def test_search_topics_title_post(setup_test_database):
     respdata = json.loads(response.content)
 
     search_results = respdata["data"]["search"]
+    print(respdata)
+    print(search_results)
+    print("@@@@@@@__________")
     results = search_results["results"]
     total = search_results["total"]
 

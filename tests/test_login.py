@@ -94,6 +94,9 @@ async def test_lock_user(setup_test_database):
 
 @pytest.mark.asyncio
 async def test_auth_expired(setup_test_database):
+    """
+     Test that authentication for a given user fails after waiting the expiry period.
+    """
     client = await get_test_client()
     from api.scripts.insert_test_data import user
 
@@ -145,7 +148,8 @@ async def test_auth_expired(setup_test_database):
     assert len(posts) == 5
 
     # Wait until the token expires.
-    sleep_time = float(int(ttl) / 1000)
+    sleep_time = float(int(ttl))
+    print(sleep_time)
     time.sleep(sleep_time)
     #
 

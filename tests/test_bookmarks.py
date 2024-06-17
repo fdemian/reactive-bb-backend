@@ -175,7 +175,7 @@ async def test_bookmarks_by_user_posts(setup_test_database):
     mut_data = mut_cont["data"]["bookmarkPost"]
 
     assert mut_data["ok"] is True
-    assert mut_data["id"] == 2
+    assert mut_data["id"] == 1
     assert mut_data["userId"] == 2
 
     # Check that post has been bookmarked.
@@ -183,6 +183,6 @@ async def test_bookmarks_by_user_posts(setup_test_database):
     assert check_bk_resp.status_code == 200
     check_bk_cont = json.loads(check_bk_resp.content)["data"]["bookmarksByPostList"]
     assert len(check_bk_cont) == 1
-    assert check_bk_cont[0]["id"] == 2
+    assert check_bk_cont[0]["id"] == 1
     assert check_bk_cont[0]["userId"] == 2
     assert check_bk_cont[0]["postId"] == 1

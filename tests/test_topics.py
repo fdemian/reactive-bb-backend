@@ -276,7 +276,7 @@ async def test_delete_topics(setup_test_database):
     topics_count = content["data"]["topics"]["topicsCount"]
 
     assert response.status_code == 200
-    assert topics_count == 2
+    assert topics_count == 1
 
     delete_query = """
     mutation DeleteTopic($topic: Int!) {
@@ -305,7 +305,7 @@ async def test_delete_topics(setup_test_database):
     verify_cont = json.loads(verify_resp.content)
     verify_topics_count = verify_cont["data"]["topics"]["topicsCount"]
 
-    assert verify_topics_count == 1
+    assert verify_topics_count == 0
 
 
 @pytest.mark.asyncio
@@ -327,7 +327,7 @@ async def test_pin_topic_fail(setup_test_database):
     pin_topic_query_data = {
         "operationName": "PinTopic",
         "query": pin_topic_query.replace("\n", "").strip(),
-        "variables": {"topic": 2},
+        "variables": {"topic": 1},
     }
 
     get_topic_query = """query GetTopic($id: Int!) {
@@ -341,7 +341,7 @@ async def test_pin_topic_fail(setup_test_database):
     get_topic_data = {
         "operationName": "GetTopic",
         "query": get_topic_query.replace("\n", "").strip(),
-        "variables": {"id": 2},
+        "variables": {"id": 1},
     }
 
     # Attempt to pin topic as an unlogged user.
@@ -357,7 +357,7 @@ async def test_pin_topic_fail(setup_test_database):
     topic = respdata["data"]["topic"]
 
     assert response.status_code == 200
-    assert topic["id"] == 2
+    assert topic["id"] == 1
     assert topic["pinned"] is False
 
     # Attempt to pin topic as a regular user.
@@ -373,7 +373,7 @@ async def test_pin_topic_fail(setup_test_database):
     topic = respdata["data"]["topic"]
 
     assert response.status_code == 200
-    assert topic["id"] == 2
+    assert topic["id"] == 1
     assert topic["pinned"] is False
 
 
@@ -396,7 +396,7 @@ async def test_pin_unpin_topic(setup_test_database):
     pin_topic_query_data = {
         "operationName": "PinTopic",
         "query": pin_topic_query.replace("\n", "").strip(),
-        "variables": {"topic": 2},
+        "variables": {"topic": 1},
     }
     headers = {"content-type": "application/json", "access_token": access_token}
     response = client.post(
@@ -415,7 +415,7 @@ async def test_pin_unpin_topic(setup_test_database):
     get_topic_data = {
         "operationName": "GetTopic",
         "query": get_topic_query.replace("\n", "").strip(),
-        "variables": {"id": 2},
+        "variables": {"id": 1},
     }
     response = client.post(
         "/api/graphql", headers=headers, data=json.dumps(get_topic_data)
@@ -424,7 +424,7 @@ async def test_pin_unpin_topic(setup_test_database):
     topic = respdata["data"]["topic"]
 
     assert response.status_code == 200
-    assert topic["id"] == 2
+    assert topic["id"] == 1
     assert topic["pinned"] is True
 
     # Unpin topic
@@ -440,7 +440,7 @@ async def test_pin_unpin_topic(setup_test_database):
     topic = respdata["data"]["topic"]
 
     assert response.status_code == 200
-    assert topic["id"] == 2
+    assert topic["id"] == 1
     assert topic["pinned"] is False
 
 
@@ -677,7 +677,7 @@ async def test_increase_topic_views(setup_test_database):
     data = {
         "operationName": "GetTopic",
         "query": query.replace("\n", "").strip(),
-        "variables": {"id": 2},
+        "variables": {"id": 1},
     }
     headers = {"content-type": "application/json"}
     response = client.post("/api/graphql", headers=headers, data=json.dumps(data))
@@ -703,13 +703,13 @@ async def test_increase_topic_views(setup_test_database):
     iv_data = {
         "operationName": "IncreaseViewCount",
         "query": iv_query.replace("\n", "").strip(),
-        "variables": {"topic": 2},
+        "variables": {"topic": 1},
     }
     iv_resp = client.post("/api/graphql", headers=iv_headers, data=json.dumps(iv_data))
     iv_cont = json.loads(iv_resp.content)["data"]["increaseViewCount"]
 
     assert iv_cont["ok"] is True
-    assert iv_cont["id"] == 2
+    assert iv_cont["id"] == 1
 
     # Check that the topic views have increased.
     response_2 = client.post("/api/graphql", headers=headers, data=json.dumps(data))
