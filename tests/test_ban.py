@@ -44,7 +44,8 @@ async def test_ban_users_correctly(setup_test_database):
 
     assert user_data["banned"] is False
 
-    ban_reason = '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"BAN_REASON","type":"text","version":1}],"direction":"ltr","format":"","indent"'
+    ban_reason = '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"",' \
+                 '"text":"BAN_REASON","type":"text","version":1}],"direction":"ltr","format":"","indent"'
     ban_expires = datetime.today() + timedelta(days=7)
 
     # Ban user
@@ -64,8 +65,6 @@ async def test_ban_users_correctly(setup_test_database):
     }
 
     ban_resp = client.post("/api/graphql", headers=headers, data=json.dumps(ban_data))
-    #print(ban_resp.content)
-    #print("@@@@@@@@@@@@@@@@@@@@@@")
     ban_data = json.loads(ban_resp.content)["data"]["banUser"]
     assert ban_data is True
 

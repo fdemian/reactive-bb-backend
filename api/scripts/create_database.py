@@ -30,6 +30,7 @@ def delete_database():
     database_url = get_database_url_options(options)
     drop_database(database_url.render_as_string(hide_password=False))
 
+
 def create_db_and_upgrade():
     options = parse_config_file(config_file_path)
     database_url = get_database_url_options(options)

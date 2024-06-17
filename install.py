@@ -83,7 +83,7 @@ if __name__ == "__main__":
     environment = ""
     while environment != "DEV" and environment != "PROD" and environment != "TEST":
         environment = input(
-            """Select the type of installation: 
+            """Select the type of installation:
           DEV = Development. For local testing.
           PROD = Production. For production environments.
           TEST = Testing. Ideal for running tests. Do not configure in production environments.

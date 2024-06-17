@@ -32,7 +32,6 @@ async def test_get_categories(setup_test_database):
 async def test_get_category(setup_test_database):
     client = await get_test_client()
 
-
     query = """query GetCategory($id: Int!) {
         category(id: $id) {
           id

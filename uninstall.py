@@ -38,7 +38,8 @@ if __name__ == "__main__":
     while confirmation != "Y" and confirmation != "N":
         confirmation = input(
             """WARNING!: This will uninstall the application.
-            It will destroy the local database and erase any files inside the created directories (which includes any user uploaded files).
+            It will destroy the local database and erase any files inside the created directories
+            (which includes any user uploaded files).
             Are you sure you wish to proceed? (Y/N).
           \n\n\n
         """
@@ -70,4 +71,3 @@ if __name__ == "__main__":
     logging.debug("Uninstall finished correctly")
     print("===== UNINSTALL COMPLETED =====")
     print("To reinstall the application use the command `python3 install.py`")
-

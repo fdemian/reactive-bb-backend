@@ -45,7 +45,7 @@ async def test_add_and_remove_likes(setup_test_database):
           postId
           likes
         }
-      } 
+      }
     """
     data_mut = {
         "operationName": "LikePost",

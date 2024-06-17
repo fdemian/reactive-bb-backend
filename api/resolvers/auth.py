@@ -11,15 +11,26 @@ def auth_flow_response(user, jwt_settings):
     """
     * set_cookie params:
     *
-    * key (str) – the key (name) of the cookie to be set.
-    * value (str) – the value of the cookie.
-    * max_age (Optional[Union[datetime.timedelta, int]]) – should be a number of seconds, or None (default) if the cookie should last only as long as the client’s browser session.
-    * expires (Optional[Union[str, datetime.datetime, int, float]]) – should be a datetime object or UNIX timestamp.
-    * path (Optional[str]) – limits the cookie to a given path, per default it will span the whole domain.
-    * domain (Optional[str]) – if you want to set a cross-domain cookie. For example, domain=".example.com" will set a cookie that is readable by the domain www.example.com, foo.example.com etc. Otherwise, a cookie will only be readable by the domain that set it.
-    * secure (bool) – If True, the cookie will only be available via HTTPS.
-    * httponly (bool) – Disallow JavaScript access to the cookie.
-    * samesite (Optional[str]) – Limit the scope of the cookie to only be attached to requests that are “same-site”.
+    * - key (str) – the key (name) of the cookie to be set.
+    *
+    * - value (str) – the value of the cookie.
+    *
+    * - max_age (Optional[Union[datetime.timedelta, int]]) – should be a number of seconds, or None (default)
+    * if the cookie should last only as long as the client’s browser session.
+    *
+    * - expires (Optional[Union[str, datetime.datetime, int, float]]) – should be a datetime object or UNIX timestamp.
+    *
+    * - path (Optional[str]) – limits the cookie to a given path, per default it will span the whole domain.
+    *
+    * - domain (Optional[str]) – if you want to set a cross-domain cookie. For example, domain=".example.com" will set a
+    * cookie that is readable by the domain www.example.com, foo.example.com etc.
+    * Otherwise, a cookie will only be readable by the domain that set it.
+    *
+    * - secure (bool) – If True, the cookie will only be available via HTTPS.
+    *
+    * - httponly (bool) – Disallow JavaScript access to the cookie.
+    *
+    * - samesite (Optional[str]) – Limit the scope of the cookie to only be attached to requests that are “same-site”.
     """
 
     if user is None:
@@ -39,11 +50,11 @@ def auth_flow_response(user, jwt_settings):
     refresh_expiration = jwt_settings["refresh"]["expiration"]
     server_opts = json.loads(environ["SERVER"])
     is_prod = bool(server_opts["production"])
-    #domain = None
+    # domain = None
     samesite = "lax"
     if is_prod:
         samesite = "strict"
-        #domain = server_opts["domain"]
+        # domain = server_opts["domain"]
     try:
         response = JSONResponse(
             {
@@ -79,7 +90,7 @@ def auth_flow_response(user, jwt_settings):
         print("Key Error - key not found")
         print("Details")
         print(e)
-        #logging.log(e)
+        # logging.log(e)
         return JSONResponse(
             {
                 "ok": False,

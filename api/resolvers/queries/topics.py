@@ -43,17 +43,17 @@ def resolve_topics(_, info, offset, limit):
         return {"topics": topics, "topicsCount": topics_count}
 
 
-def resolve_topic(_, info, id):
+def resolve_topic(_, info, topic_id):
     db_engine = get_engine_from_context(info)
     with Session(db_engine) as session:
-        topic = session.scalars(select(Topic).filter_by(id=id)).first()
+        topic = session.scalars(select(Topic).filter_by(id=topic_id)).first()
         return topic
 
 
-def resolve_topics_by_user(_, info, id):
+def resolve_topics_by_user(_, info, user_id):
     db_engine = get_engine_from_context(info)
     with Session(db_engine) as session:
         topics = session.scalars(
-            select(Topic).filter_by(user_id=id).order_by(Topic.created.desc())
+            select(Topic).filter_by(user_id=user_id).order_by(Topic.created.desc())
         ).all()
         return topics
