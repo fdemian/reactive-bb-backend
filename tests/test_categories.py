@@ -6,8 +6,6 @@ from .conftest import get_test_client
 @pytest.mark.asyncio
 async def test_get_categories(setup_test_database):
     client = await get_test_client()
-
-
     query = """query GetCategories {
       categories {
         id
