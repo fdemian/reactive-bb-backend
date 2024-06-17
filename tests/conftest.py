@@ -71,9 +71,6 @@ def setup_test_database():
         config.get_main_option("script_location") is not None
     ), "Script location variable does not exist."
 
-    if database_exists(database_url):
-        drop_database(database_url)
-
     assert not database_exists(
         database_url
     ), "Test database already exists. Aborting tests."
@@ -86,6 +83,7 @@ def setup_test_database():
         user = get_user_for_db_test(alt_session, inserted_user_id)
         assert user is not None
         assert user.id == 1
+    assert database_exists(database_url), "Test database dropped before running code."
     yield
     if database_exists(database_url):
         drop_database(database_url)  # Drop the test database.
