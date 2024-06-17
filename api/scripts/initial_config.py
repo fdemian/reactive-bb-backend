@@ -20,9 +20,8 @@ def create_directories():
       - uploads (general file / images uploads)
       - avatars (`static/avatars` user avatars). This is the default folder where user avatars are placed.
     """
-
-    uploads_dir = path.join(root_path, "uploads")
     avatars_dir = path.join(path.join(root_path, "static"), "avatars")
+    uploads_dir = path.join(path.join(root_path, "static"), "uploads")
 
     if not isdir(uploads_dir):
         mkdir(uploads_dir)
