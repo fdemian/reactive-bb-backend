@@ -32,8 +32,6 @@ jobs:
     - name: Install PostgreSQL database
       run: |
         sudo apt install postgresql
-        sudo -u postgres psql template1
-        ALTER USER postgres with encrypted password 'postgres';
     - name: Reset postgres
       run: |
         sudo systemctl restart postgresql.service
