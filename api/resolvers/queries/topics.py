@@ -34,7 +34,7 @@ def resolve_topics(_, info, offset, limit):
     with Session(db_engine) as session:
         topics = session.scalars(
             select(Topic)
-            .where(Topic.pinned is False)
+            .where(Topic.pinned.is_(False))
             .order_by(Topic.created.desc())
             .limit(limit)
             .offset(offset)
