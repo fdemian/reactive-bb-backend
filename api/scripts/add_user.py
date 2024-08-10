@@ -1,9 +1,11 @@
 from sqlalchemy.orm import Session
 from getpass import getpass
-from api.database.models import User
 from api.auth.crypto import hash_password
 from os import urandom
 from api.database.utils import get_engine
+from sqlalchemy.orm.exc import MultipleResultsFound, NoResultFound
+from api.database.models import User
+from sqlalchemy import select
 
 
 def do_save_user(user_to_save, session, *args, **kwargs):
@@ -81,7 +83,14 @@ def add_user():
 
     db_engine = get_engine()
     with Session(db_engine) as session:
-        do_save_user(user, session, is_valid=True)
+        try:
+            session.scalars(select(User).filter_by(username=username)).one()
+            print("User found. Consider creating a different user or deleting the existing user.")
+        except MultipleResultsFound:
+            print("Multiple users found with that username.")
+        except NoResultFound:
+            do_save_user(user, session, is_valid=True)
+
 
 
 """
