@@ -7,6 +7,11 @@ from api.database.models import User
 
 def delete_all_instances(session: Session, username: str) -> None:
     users = session.scalars(select(User).filter_by(username=username)).all()
+
+    if len(users) == 0:
+        print(f"No users found with the username '{username}'.")
+        return
+
     for user in users:
         session.delete(user)
     session.commit()
