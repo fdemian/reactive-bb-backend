@@ -1,33 +1,32 @@
-from api.database.utils import get_engine
-from sqlalchemy.orm.exc import MultipleResultsFound, NoResultFound
-from sqlalchemy import select
-from sqlalchemy.orm import Session
-from api.database.models import User
 from os import path
+from api.scripts.initial_config import get_config_file_opts
 
+CONFIG_PATH = "../../config.json"
 NGINX_CONFIG_FILE_PATH = "../../nginx.sample.conf"
 NGINX_CONFIG_FILE_PATH_DEF = "../../ngingx.conf"
 
 current_dir = path.dirname(__file__)
 config_file_from = path.join(current_dir, NGINX_CONFIG_FILE_PATH)
 config_file_dest = path.join(current_dir, NGINX_CONFIG_FILE_PATH_DEF)
+main_config_path = path.join(current_dir, CONFIG_PATH)
 PROJECT_PATH = current_dir.split('/api/scripts')[0]
 
 
 def replace_vars(text: str) -> str:
+    config_opts = get_config_file_opts(main_config_path)
+    server = config_opts["server"]
+    security = config_opts["security"]
+    domain = server["domain"]
+
     return text\
         .replace("<ROOT_DIR>", PROJECT_PATH)\
-        .replace("<SSL_CERT_FULLCHAIN>", "FULL_CHAIN")\
-        .replace("<SSL_CERT_PRIVKEY>", "FULL_KEY")\
-        .replace("<SERVER_NAME>", "HTTP_DOMAIN")
+        .replace("<SSL_CERT_FULLCHAIN>", security['ssl_cert'])\
+        .replace("<SSL_CERT_PRIVKEY>", security['ssl_key'])\
+        .replace("<SERVER_NAME>", domain)
 
 
 def generate_conf():
-    from api.read_config import config_to_environ_sync
-
-    config_to_environ_sync()
-    print("Generating NGINX config file: ")
-    print()
+    print("Generating NGINX config file.")
     with open(config_file_from) as reader:
         text = reader.read()
         newtext = replace_vars(text)
@@ -35,12 +34,7 @@ def generate_conf():
 
     with open(config_file_dest, 'w+') as writer:
         writer.write(newtext)
-
-"""
-Initial configuration script.
-
-Creates the initial file upload directories and copies the config file.
-"""
+    print("Config file generated.")
 
 
 def main():

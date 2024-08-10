@@ -63,6 +63,11 @@ def get_config_opts(env):
         return parsed_json
 
 
+def get_config_file_opts(config_path):
+    with open(config_path) as config_file:
+        parsed_json = json.load(config_file)
+        return parsed_json
+
 def main():
     """
     Initial configuration script.
