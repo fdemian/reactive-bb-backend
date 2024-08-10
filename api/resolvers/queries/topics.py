@@ -21,7 +21,7 @@ def get_pinned_topics(_, info):
     with Session(db_engine) as session:
         topics = session.scalars(
             select(Topic)
-            .where(Topic.pinned is True)
+            .where(Topic.pinned == True)
             .order_by(Topic.created.desc())
             .limit(PINNED_TOPICS_LIMIT)
         ).all()
