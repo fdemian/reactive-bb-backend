@@ -81,5 +81,6 @@ def create_user(_, info, username, password, email):
                     "message": "",
                 }
         except SQLAlchemyError:
+            session.rollback()
             logging.exception("SQLAlchemy error.")
             return {"ok": False, "id": 0, "email": "", "message": "Generic Error."}

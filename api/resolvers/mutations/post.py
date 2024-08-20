@@ -39,6 +39,7 @@ def edit_post(_, info, post, user, content):
 
             return {"id": post_to_edit.id, "ok": True, "content": content}
         except SQLAlchemyError:
+            session.rollback()
             return {"ok": False, "id": None, "content": None}
 
 
@@ -65,6 +66,7 @@ def delete_post(_, info, post, user):
 
             return {"ok": True, "id": post}
         except SQLAlchemyError:
+            session.rollback()
             return {"ok": False, "id": None}
 
 
@@ -99,6 +101,7 @@ def create_post(_, info, user, topic, content):
                 },
             }
         except SQLAlchemyError:
+            session.rollback()
             print("Error inserting post")
             print("User {0}".format(user.username))
             print("Content {0}".format("content"))

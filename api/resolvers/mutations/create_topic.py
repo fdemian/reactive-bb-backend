@@ -18,6 +18,7 @@ async def increase_view_count(_, info, topic):
             session.commit()
             return {"ok": True, "id": topic.id}
         except SQLAlchemyError:
+            session.rollback()
             return {"ok": False, "id": None}
 
 

@@ -46,6 +46,7 @@ async def like_post(_, info, post, topic, user, originator):
             )
             return {"id": like.id, "ok": True, "postId": post, "likes": 0}
         except SQLAlchemyError:
+            session.rollback()
             print(f"Unknown Error - {sys.exc_info()[1]}")
             print(f"Details - {sys.exc_info()}")
             return {"id": 0, "ok": False, "postId": post, "likes": 0}

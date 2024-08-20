@@ -16,6 +16,7 @@ def bookmark_post(_, info, post, user):
             session.commit()
             return {"id": bookmark.id, "ok": True, "postId": post, "userId": user}
         except SQLAlchemyError:
+            session.rollback()
             return {"id": 0, "ok": False, "postId": post, "userId": user}
 
 
@@ -32,4 +33,5 @@ def remove_bookmark(_, info, post, user):
             session.commit()
             return {"id": id, "ok": True, "postId": post, "userId": user}
         except SQLAlchemyError:
+            session.rollback()
             return {"id": 0, "ok": False, "postId": post, "userId": user}
