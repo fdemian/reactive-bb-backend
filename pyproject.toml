@@ -36,6 +36,7 @@ sqlalchemy = "2.0.32"
 supervisor = "^4.2.5"
 requests = "2.32.3"
 flake8 = "^7.1.0"
+setuptools = "74.0.0"
 
 
 [build-system]
