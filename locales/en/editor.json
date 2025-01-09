@@ -55,7 +55,10 @@
       "fontColor": "Font color",
       "bgColor": "Background color",
       "videoURL": "Video URL",
-      "blockSpoiler": "Block spoiler"
+      "blockSpoiler": "Block spoiler",
+      "uppercase": "Uppercase",
+      "lowercase": "Lowercase",
+      "capitalize": "Capitalize"
     },
     "equationModal": {
       "visualization": "Visualization",

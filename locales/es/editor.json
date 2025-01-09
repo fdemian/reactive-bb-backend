@@ -56,7 +56,10 @@
       "fontColor": "Color de fuente",
       "bgColor": "Color de fondo",
       "videoURL": "URL del video",
-      "blockSpoiler": "Bloque spoiler"
+      "blockSpoiler": "Bloque spoiler",
+      "uppercase": "Mayúsculas",
+      "lowercase": "Minúsculas",
+      "capitalize": "Capitalizado"
     },
     "imageModal": {
       "title": "Insertar imagen",
