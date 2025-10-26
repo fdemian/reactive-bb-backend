@@ -74,6 +74,7 @@ def resolve_search(_, info, term, where, offset, limit):
             if "titles" in where and "posts" in where:
                 search_results = unique_results(topic_results + posts_results)
                 search_results = search_results
+                total_results_count = len(search_results)
 
             return {"results": search_results, "total": total_results_count}
 
